@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+const {page} = Astro.props
+console.log(page);
+import routes from './routes'
+console.log(routes)
+---
+<Layout title="Welcome to Astro.">
+	<main>
+		<p>
+			Olis
+		</p>
+		<canvas id="canvas">
+		</canvas>
+	</main>
+</Layout>
+<script>
+let canvas = document.getElementById("canvas") as HTMLCanvasElement;
+let canvas_context =  canvas.getContext("2d");
+let windows_height = window.innerHeight;
+let windows_width = window.innerWidth;
+canvas.height = windows_height;
+canvas.width = windows_width;
+canvas_context.fillRect(300, 0 , 100 ,200);
+canvas_context.fillStyle = "red"
+</script>
